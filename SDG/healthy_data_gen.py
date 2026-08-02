@@ -5,9 +5,9 @@ import pandas as pd
 SEED = 42
 np.random.seed(SEED)
 
-SAMPLE_RATE_HZ = 200 # Honeywell sensors run at 200 SPS
-DURATION_HRS = 8
-N_SAMPLES = SAMPLE_RATE_HZ * 3600 * DURATION_HRS # 5760000 samples
+SAMPLE_RATE_HZ = 20 # Honeywell sensors run at 200 SPS but data will be recieved at 20hz
+DURATION_HRS = 16
+N_SAMPLES = SAMPLE_RATE_HZ * 3600 * DURATION_HRS
 OUTPUT_FILE = "SDG/tah_synthetic_healthy.csv"
 
 FLOW_MIN = 4.0 # L/min
