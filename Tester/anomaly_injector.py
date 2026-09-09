@@ -24,7 +24,7 @@ output = {"measurements": window.drop(columns="timestamp").to_dict(orient="recor
 with open("SDG/anomalous_window.json", "w") as f:
     json.dump(output, f, indent=2)
     
-URL = "" # put cloud run url here
+URL = "https://ubh-ml-414777335651.australia-southeast1.run.app/predict"
 JSON_PATH = "SDG/anomalous_window.json"
 
 with open(JSON_PATH, "r") as f:

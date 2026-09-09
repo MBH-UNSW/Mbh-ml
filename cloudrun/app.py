@@ -35,6 +35,7 @@ threshold = json.load(open("/tmp/threshold.json"))["threshold"]
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
+    window_number = data.get("window_number")
     measurements = data["measurements"]
 
     raw = np.array([
@@ -54,6 +55,7 @@ def predict():
         i += WINDOW_SIZE
 
     return jsonify({
+        "window_number": window_number,
         "anomaly_detected": any(r["anomaly"] for r in results),
         "threshold": threshold,
         "windows": results
