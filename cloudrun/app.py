@@ -36,6 +36,7 @@ threshold = json.load(open("/tmp/threshold.json"))["threshold"]
 def predict():
     data = request.get_json()
     measurements = data["measurements"]
+    
 
     raw = np.array([
         [row[col] for col in FEATURE_COLS]
