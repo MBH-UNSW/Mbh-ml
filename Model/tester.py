@@ -6,7 +6,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_sco
 from tensorflow import keras
 
 # change this to switch between the two methods
-COMPARE_MODE = "lstm"  # "lstm" or "static"
+COMPARE_MODE = "static"  # "lstm" or "static"
 
 FEATURE_COLS = [
     "left_flow_lpm", "right_flow_lpm",

@@ -33,11 +33,11 @@ model.fit(
     callbacks=[early_stop],
 )
 
-model.save("artifacts/lstm_autoencoder.keras")
+model.save("artifacts/1lstm_autoencoder.keras")
 
 recon = model.predict(X_train, batch_size=BATCH_SIZE, verbose=0)
 train_mae = np.mean(np.abs(X_train - recon), axis=(1, 2))
 threshold = float(train_mae.mean() + 3 * train_mae.std())
 
-with open("artifacts/threshold.json", "w") as f:
+with open("artifacts/1threshold.json", "w") as f:
     json.dump({"threshold": threshold, "mae_mean": float(train_mae.mean()), "mae_std": float(train_mae.std())}, f, indent=2)
